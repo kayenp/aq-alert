@@ -14,10 +14,10 @@ const responses = await fetchWeatherApi(url, params);
 const response = responses[0];
 
 // Attributes for timezone and location
-const latitude = response.latitude();
-const longitude = response.longitude();
-const elevation = response.elevation();
-const utcOffsetSeconds = response.utcOffsetSeconds();
+const latitude = response?.latitude();
+const longitude = response?.longitude();
+const elevation = response?.elevation();
+const utcOffsetSeconds = response?.utcOffsetSeconds();
 
 console.log(
 	`\nCoordinates: ${latitude}°N ${longitude}°E`,
@@ -25,20 +25,20 @@ console.log(
 	`\nTimezone difference to GMT+0: ${utcOffsetSeconds}s`,
 );
 
-const current = response.current()!;
-const hourly = response.hourly()!;
+const current = response?.current()!;
+const hourly = response?.hourly()!;
 
 // Note: The order of weather variables in the URL query and the indices below need to match!
 const weatherData = {
 	current: {
-		time: new Date((Number(current.time()) + utcOffsetSeconds) * 1000),
+		time: new Date((Number(current.time()) + (utcOffsetSeconds || 0)) * 1000),
 		pm2_5: current.variables(0)!.value(),
 		pm10: current.variables(1)!.value(),
 	},
 	hourly: {
 		time: Array.from(
 			{ length: (Number(hourly.timeEnd()) - Number(hourly.time())) / hourly.interval() }, 
-			(_ , i) => new Date((Number(hourly.time()) + i * hourly.interval() + utcOffsetSeconds) * 1000)
+			(_ , i) => new Date((Number(hourly.time()) + i * hourly.interval() + (utcOffsetSeconds || 0)) * 1000)
 		),
 		pm10: hourly.variables(0)!.valuesArray(),
 		pm2_5: hourly.variables(1)!.valuesArray(),
