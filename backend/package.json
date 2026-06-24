@@ -1,0 +1,29 @@
+{
+  "name": "aq-alert-backend",
+  "version": "1.0.0",
+  "description": "Server code for AQ Alert app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch --env-file=.env index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kayenp/aq-alert.git"
+  },
+  "author": "Ken Poon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kayenp/aq-alert/issues"
+  },
+  "homepage": "https://github.com/kayenp/aq-alert#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "openmeteo": "^1.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
