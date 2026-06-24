@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch --env-file=.env index.js"
+    "dev": "tsx --watch --env-file=.env index.ts"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "openmeteo": "^1.2.3"
   },
   "devDependencies": {
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
 }
