@@ -1,4 +1,5 @@
 import { fetchWeatherApi } from "openmeteo";
+export { weatherData };
 
 
 const params = {
