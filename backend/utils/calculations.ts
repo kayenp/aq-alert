@@ -5,7 +5,7 @@ import { currPm2_5, currPm10 } from "./fetch-data.js";
 const pm2_5Concentration = preciseRound(currPm2_5, 1);
 const pm10Concentration = Math.round(currPm10);
 
-function calcConcentration()
+function calcConcentration() {}
 
 // Concentration Breakpoints
 const pm2_5 = [[0.0, 9.0], [9.1, 35.4], [35.5, 55.4], [55.5, 125.4], [125.5, 225.4], [225.5]];
