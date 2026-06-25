@@ -7,6 +7,8 @@ const params = {
 	longitude: -118.127,
 	hourly: ["pm10", "pm2_5", "us_aqi", "us_aqi_pm2_5", "us_aqi_pm10", "us_aqi_nitrogen_dioxide", "us_aqi_carbon_monoxide", "us_aqi_ozone", "us_aqi_sulphur_dioxide"],
 	current: ["pm2_5", "pm10"],
+	// Number of days to forecast. No property = 5 days
+	forecast_days: 1,
 };
 const url = "https://air-quality-api.open-meteo.com/v1/air-quality";
 const responses = await fetchWeatherApi(url, params);
