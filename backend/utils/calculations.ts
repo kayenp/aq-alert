@@ -19,7 +19,7 @@ const pm10 = {
 }
 
 // Truncate pollutant data
-export function truncateData(pollutant: ) {
+export function truncateData(pollutant) {
     switch(pollutant.field) {
         
         // round to 1 decimal
